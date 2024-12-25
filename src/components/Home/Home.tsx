@@ -10,7 +10,7 @@ function Home() {
       <main className="home-content">
         <section>
           <h2>About This Demo</h2>
-          <p>The chatbot feature can be toggled on or off in real time without reloading the page.</p>
+          <p>The chatbot feature can be toggled on or off in real time without redeploying the page.</p>
         </section>
       </main>
     </div>
