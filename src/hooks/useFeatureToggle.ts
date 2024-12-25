@@ -7,14 +7,16 @@ export const useFeatureToggle = () => {
   useEffect(() => {
     const fetchFeatureFlags = async () => {
       try {
-        const response = await fetch('https://api.jsonbin.io/v3/b/676bd35aacd3cb34a8bf1dec', {
+        const response = await fetch(import.meta.env.VITE_JSONBIN_BIN_URL, {
           headers: {
             'X-Master-Key': import.meta.env.VITE_JSONBIN_API_KEY,
             'X-Access-Key': import.meta.env.VITE_JSONBIN_ACCESS_KEY
           }
         });
         const data = await response.json();
-        setIsChatbotEnabled(data.record.features.chatbot.enabled);
+        setIsChatbotEnabled(data.record.chatbotFeatureToggle);
+        console.log('Feature flags fetched:', data);
+        
       } catch (error) {
         console.error('Error fetching feature flags:', error);
         setIsChatbotEnabled(false);
