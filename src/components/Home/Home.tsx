@@ -10,7 +10,7 @@ function Home() {
       <main className="home-content">
         <section>
           <h2>About This Demo</h2>
-          <p>Try toggling the chatbot feature using the environment variable!</p>
+          <p>The chatbot feature can be toggled on or off in real time without reloading the page.</p>
         </section>
       </main>
     </div>
