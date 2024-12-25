@@ -4,12 +4,16 @@ import { useFeatureToggle } from './hooks/useFeatureToggle';
 import './App.css';
 
 function App() {
-  const { isChatbotEnabled } = useFeatureToggle();
+  const { isChatbotEnabled, loading } = useFeatureToggle();
 
   return (
     <div className="app">
       <Home />
-      {isChatbotEnabled && <Chatbot />}
+      {loading ? (
+        <div className="feature-loading">Loading features...</div>
+      ) : (
+        isChatbotEnabled && <Chatbot />
+      )}
     </div>
   );
 }
